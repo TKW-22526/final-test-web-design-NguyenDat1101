@@ -1,0 +1,349 @@
+:root {
+    --nav-footer-bg: #0f172a;
+    --nav-footer-text: #f8fafc;
+    --navy-blue: #1e3a8a;
+    --accent-blue: #3b82f6;
+    --accent-cyan: #06b6d4;
+    --bg-body: #f8fafc;
+    --text-color: #334155;
+    --text-muted: #64748b;
+    --card-bg: #ffffff;
+    --card-border: #e2e8f0;
+    --input-bg: #ffffff;
+    --input-border: #cbd5e1;
+    --gradient-tech: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+}
+
+[data-theme='dark'] {
+    --nav-footer-bg: #020617;
+    --nav-footer-text: #f8fafc;
+    --navy-blue: #60a5fa;
+    --accent-blue: #3b82f6;
+    --accent-cyan: #22d3ee;
+    --bg-body: #0f172a;
+    --text-color: #e2e8f0;
+    --text-muted: #94a3b8;
+    --card-bg: #1e293b;
+    --card-border: #334155;
+    --input-bg: #0f172a;
+    --input-border: #334155;
+    --gradient-tech: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+    --img-wrapper-bg: #cbd5e1; /* Nền xám nhẹ cho ảnh trong Dark Mode để giảm chói */
+}
+
+/* Thêm mặc định cho Light Mode */
+:root {
+    --img-wrapper-bg: #ffffff;
+}
+
+body {
+    background-color: var(--bg-body);
+    color: var(--text-color);
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.bg-gradient-tech {
+    background: var(--gradient-tech) !important;
+}
+
+.card {
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    border-color: var(--card-border);
+}
+
+.navbar {
+    background-color: var(--nav-footer-bg) !important;
+    border-bottom: 3px solid var(--navy-blue);
+}
+
+.navbar-brand, .nav-link {
+    color: var(--nav-footer-text) !important;
+    font-weight: 500;
+}
+
+.nav-link:hover {
+    color: var(--accent-cyan) !important;
+}
+
+.btn-dark-blue {
+    background-color: var(--navy-blue);
+    color: #ffffff;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.btn-dark-blue:hover {
+    background-color: var(--nav-footer-bg);
+    color: var(--accent-cyan);
+}
+
+.btn-accent {
+    background-color: var(--accent-cyan);
+    color: var(--nav-footer-bg);
+    font-weight: 600;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.btn-accent:hover {
+    background-color: var(--accent-blue);
+    color: #ffffff;
+}
+
+.card-product {
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    background-clip: padding-box;
+    overflow: hidden;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease;
+}
+
+.card-product:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 20px -5px rgba(15, 23, 42, 0.15);
+}
+
+.card-product .card-img-wrapper {
+    background-color: var(--img-wrapper-bg);
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    border-bottom: 1px solid var(--card-border);
+    background-clip: padding-box;
+    transition: background-color 0.3s;
+}
+
+[data-theme='dark'] .card-product img {
+    filter: brightness(0.85) contrast(1.1); /* Giảm độ sáng của ảnh nền trắng trong Dark Mode */
+    mix-blend-mode: multiply; /* Giúp ảnh nền trắng hòa nhập vào nền xám của wrapper */
+}
+
+.card-product img {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+    transition: filter 0.3s;
+}
+
+.text-dark-blue {
+    color: var(--navy-blue) !important;
+}
+
+footer {
+    background-color: var(--nav-footer-bg);
+    color: var(--text-muted);
+    margin-top: auto;
+    border-top: 4px solid var(--navy-blue);
+}
+
+footer a {
+    color: #cbd5e1;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: var(--accent-cyan);
+}
+
+.badge-code {
+    background-color: var(--nav-footer-bg);
+    color: var(--accent-cyan);
+}
+
+
+.login-section {
+    min-height: calc(100vh - 100px);
+    display: flex;
+    align-items: center;
+    background: var(--gradient-tech);
+    position: relative;
+    overflow: hidden;
+}
+
+.login-card {
+    background: var(--card-bg);
+    border-radius: 16px;
+    box-shadow: 0 15px 35px rgba(15, 23, 42, 0.25);
+    border: 1px solid var(--card-border);
+    background-clip: padding-box;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+@media (min-width: 992px) {
+    .login-info-side {
+        background: var(--gradient-tech);
+        color: #ffffff;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 3rem !important;
+        position: relative;
+        border-right: 1px solid rgba(255, 255, 255, 0.1);
+    }
+}
+
+.login-form-side {
+    padding: 2.5rem !important;
+    background-color: var(--card-bg);
+}
+
+.auth-nav-tabs {
+    border-bottom: 2px solid var(--card-border);
+    margin-bottom: 2rem;
+}
+
+.auth-nav-tabs .nav-link {
+    color: var(--text-muted) !important;
+    font-weight: 600;
+    border: none;
+    background: none;
+    padding-bottom: 0.75rem;
+    position: relative;
+    transition: all 0.2s ease;
+}
+
+.auth-nav-tabs .nav-link:hover {
+    color: var(--navy-blue) !important;
+}
+
+.auth-nav-tabs .nav-link.active {
+    color: var(--navy-blue) !important;
+    background: none;
+}
+
+.auth-nav-tabs .nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: var(--accent-cyan);
+    border-radius: 3px;
+}
+
+.form-floating > .form-control {
+    background-color: var(--input-bg);
+    color: var(--text-color);
+    border-color: var(--input-border);
+}
+
+.form-floating > label {
+    color: var(--text-muted);
+}
+
+.form-floating > .form-control:focus ~ label,
+.form-floating > .form-control:not(:placeholder-shown) ~ label {
+    color: var(--accent-blue);
+    transform: scale(0.85) translateY(-0.5rem) translateX(0.15rem);
+}
+
+.form-control:focus {
+    background-color: var(--input-bg);
+    color: var(--text-color);
+    border-color: var(--accent-blue);
+    box-shadow: 0 0 0 0.25rem rgba(59, 130, 246, 0.25);
+}
+
+.social-login-btn {
+    border: 1px solid var(--card-border);
+    background-color: var(--input-bg);
+    color: var(--text-color);
+    background-clip: padding-box;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.social-login-btn:hover {
+    background-color: var(--bg-body);
+    border-color: var(--accent-blue);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+}
+
+/* Animations */
+.animate-slide-up {
+    animation: slideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-cpu-slow {
+    animation: spinSlow 20s linear infinite;
+}
+
+@keyframes spinSlow {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.dropdown-menu .dropdown-item {
+    transition: all 0.2s ease;
+}
+
+#theme-toggle {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 !important;
+    border-radius: 50% !important;
+    border: 1px solid transparent;
+    outline: none;
+    will-change: transform;
+    transition: all 0.2s ease;
+}
+
+#theme-toggle i {
+    font-size: 1.2rem;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.bg-light {
+    background-color: var(--bg-body) !important;
+}
+
+.bg-white {
+    background-color: var(--card-bg) !important;
+}
+
+.text-muted {
+    color: var(--text-muted) !important;
+}
+
+.btn-nav-login {
+    border: 2px solid var(--accent-cyan);
+    color: var(--nav-footer-text);
+    background-color: transparent;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    padding: 0.5rem 1.25rem;
+}
+.btn-nav-login:hover {
+    background-color: var(--accent-cyan);
+    color: var(--nav-footer-bg);
+}

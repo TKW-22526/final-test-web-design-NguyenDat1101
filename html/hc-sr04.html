@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cảm biến siêu âm HC-SR04 - Chi Tiết Sản Phẩm</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="../index.html">
+                <i class="bi bi-cpu-fill text-info fs-3 me-2"></i>
+                <span class="fw-bold tracking-wide text-uppercase text-white">E-Component</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-center">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">Trang Chủ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="../index.html#products-section">Sản Phẩm</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#about-section">Giới Thiệu</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#contact-section">Liên Hệ</a>
+                    </li>
+                    <li class="nav-item">
+                        <button id="theme-toggle" class="btn btn-outline-light rounded-circle p-0 ms-2" onclick="toggleTheme()" style="width: 40px; height: 40px;">
+                            <i class="bi bi-moon"></i>
+                        </button>
+                    </li>
+                    <li class="nav-item ms-lg-3">
+                        <a href="cart.html" class="btn btn-accent rounded-pill px-4 shadow-sm text-dark-blue d-flex align-items-center">
+                            <i class="bi bi-cart3 me-2"></i> Giỏ Hàng
+                        </a>
+                    </li>
+                    <li class="nav-item ms-lg-2" id="nav-auth-btn">
+                        <!-- Dynamic Login/User Button populated by app.js -->
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="bg-light py-3 border-bottom">
+        <div class="container">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb mb-0">
+                    <li class="breadcrumb-item"><a href="../index.html">Trang chủ</a></li>
+                    <li class="breadcrumb-item"><a href="../index.html#products-section">Cảm biến</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">HC-SR04</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+    <section class="py-5 bg-white">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-md-6">
+                    <div class="p-4 bg-light border rounded-3 text-center d-flex justify-content-center align-items-center" style="min-height: 400px;">
+                        <img src="../assets/images/hcsr04.png" alt="Cảm biến siêu âm HC-SR04" class="img-fluid" style="max-height: 350px;">
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <span class="badge badge-code mb-2 px-3 py-2 fs-6">Mã SP: SEN-HC-SR04</span>
+                    <h1 class="display-6 fw-bold text-dark-blue mb-3">Cảm biến siêu âm HC-SR04</h1>
+                    
+                    <div class="d-flex align-items-center mb-4">
+                        <div class="text-warning me-2">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                        </div>
+                        <span class="text-muted small">(5.0/5 - 92 đánh giá)</span>
+                    </div>
+
+                    <h2 class="text-danger fw-bold display-6 mb-4">35.000 ₫</h2>
+                    
+                    <p class="text-muted mb-4 lead">Cảm biến siêu âm HC-SR04 sử dụng sóng siêu âm để xác định khoảng cách đến vật cản. Hoạt động cực kỳ ổn định, chính xác cao và giá thành rẻ.</p>
+
+                    <div class="row g-3 mb-5 align-items-center">
+                        <div class="col-auto">
+                            <label for="quantity" class="form-label fw-bold mb-0">Số lượng:</label>
+                        </div>
+                        <div class="col-md-3 col-4">
+                            <input type="number" id="quantity" class="form-control" value="1" min="1">
+                        </div>
+                        <div class="col-md-6 col-12">
+                            <button class="btn btn-dark-blue w-100 py-2.5 rounded-pill shadow d-flex justify-content-center align-items-center" onclick="themVaoGioHang(this, {ten: 'Cảm biến siêu âm HC-SR04', gia: 35000, hinhAnh: 'assets/images/hcsr04.png'})">
+                                <i class="bi bi-cart-plus-fill me-2 fs-5"></i> Thêm Vào Giỏ Hàng
+                            </button>
+                        </div>
+                        <div class="col-12 mt-3">
+                            <a href="../assets/docs/hcsr04.pdf" class="btn btn-outline-info w-100 py-2.5 rounded-pill shadow-sm d-flex justify-content-center align-items-center" download>
+                                <i class="bi bi-download me-2 fs-5"></i> Tải Tài Liệu Kỹ Thuật
+                            </a>
+                        </div>
+                    </div>
+
+                    <h5 class="fw-bold text-dark-blue border-bottom pb-2 mb-3">Thông số kĩ thuật cơ bản</h5>
+                    <table class="table table-sm table-striped">
+                        <tbody>
+                            <tr>
+                                <th scope="row">Điện áp hoạt động</th>
+                                <td>5V DC</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Dòng điện tĩnh hoạt động</th>
+                                <td>&lt; 2mA</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Tín hiệu đầu ra</th>
+                                <td>Tín hiệu độ rộng xung (PWM) tương ứng khoảng cách</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Khoảng cách đo</th>
+                                <td>2cm - 400cm</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Độ chính xác</th>
+                                <td>Lên tới 0.3cm</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Góc cảm biến</th>
+                                <td>&lt; 15 độ</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="row mt-5 pt-4 border-top">
+                <div class="col-12">
+                    <h3 class="fw-bold text-dark-blue mb-4">Mô tả chi tiết & Nguyên lý hoạt động</h3>
+                    <p>Cảm biến siêu âm HC-SR04 hoạt động tương tự như hệ thống định vị bằng sóng âm của loài dơi. Nó phát ra sóng siêu âm tần số 40 kHz, sóng này truyền đi trong không khí, khi gặp vật cản sẽ phản xạ ngược lại và cảm biến sẽ nhận được sóng phản xạ này.</p>
+                    <p>Bằng cách đo thời gian từ lúc phát đi đến lúc nhận về (thông qua chân Echo), kết hợp với vận tốc âm thanh trong không khí (khoảng 340 m/s), ta dễ dàng tính toán được khoảng cách chính xác đến vật cản theo công thức: <strong>Khoảng cách = (Thời gian hành trình * 340) / 2</strong>.</p>
+                    
+                    <h5 class="fw-bold mt-4 mb-3 text-dark-blue">Sơ đồ nối chân kết nối với Arduino</h5>
+                    <ul>
+                        <li><strong>VCC:</strong> Nối với nguồn 5V của Arduino.</li>
+                        <li><strong>Trig (Trigger):</strong> Chân kích hoạt phát sóng siêu âm, kết nối với 1 chân Digital Out (Ví dụ: Chân D9).</li>
+                        <li><strong>Echo:</strong> Chân nhận sóng phản hồi, kết nối với 1 chân Digital In (Ví dụ: Chân D10).</li>
+                        <li><strong>GND:</strong> Nối với chân GND của Arduino.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-5 text-white">
+        <div class="container text-center text-sm-start">
+            <div class="d-flex flex-column flex-sm-row justify-content-between align-items-center">
+                <p class="mb-0 small opacity-75">&copy; 2026 E-Component. Tất cả quyền được bảo lưu.</p>
+                <div class="d-flex gap-3 mt-3 mt-sm-0 small">
+                    <a href="../index.html">Trang chủ</a>
+                    <a href="../index.html#products-section">Sản phẩm</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/app.js"></script>
+</body>
+</html>

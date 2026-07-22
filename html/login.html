@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng Nhập / Đăng Ký - E-Component</title>
+    <link rel="icon" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/icons/cpu.svg" type="image/svg+xml">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="../index.html">
+                <i class="bi bi-cpu-fill text-info fs-3 me-2"></i>
+                <span class="fw-bold tracking-wide text-uppercase text-white">E-Component</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-center">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">Trang Chủ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#products-section">Sản Phẩm</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#about-section">Giới Thiệu</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#contact-section">Liên Hệ</a>
+                    </li>
+                    <li class="nav-item">
+                        <button id="theme-toggle" class="btn btn-outline-light rounded-circle p-0 ms-2" onclick="toggleTheme()" style="width: 40px; height: 40px;">
+                            <i class="bi bi-moon"></i>
+                        </button>
+                    </li>
+                    <li class="nav-item ms-lg-3">
+                        <a href="#" class="btn btn-accent rounded-pill px-4 shadow-sm text-dark-blue d-flex align-items-center">
+                            <i class="bi bi-cart3 me-2"></i> Giỏ Hàng
+                        </a>
+                    </li>
+                    <li class="nav-item ms-lg-2" id="nav-auth-btn">
+                        <!-- Dynamic Login/User Button populated by app.js -->
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="login-section">
+        <!-- Circuit board SVG pattern background -->
+        <div class="position-absolute top-0 start-0 w-100 h-100 opacity-10" style="pointer-events: none;">
+            <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10 50 L100 50 L150 100 L300 100 M200 10 L250 60 L350 60" stroke="#06b6d4" stroke-width="2" fill="none"/>
+                <path d="M500 120 L550 80 L700 80 M600 20 L650 60" stroke="#06b6d4" stroke-width="2" fill="none"/>
+                <circle cx="10" cy="50" r="5" fill="#06b6d4"/>
+                <circle cx="300" cy="100" r="5" fill="#06b6d4"/>
+                <circle cx="700" cy="80" r="5" fill="#06b6d4"/>
+            </svg>
+        </div>
+        <div class="container py-5 z-1 animate-slide-up">
+            <div class="row justify-content-center">
+                <div class="col-xl-10 col-lg-12 col-md-10">
+                    <div class="card login-card border-0">
+                        <div class="row g-0">
+                            <!-- Left column: Info side (Hidden on small screens) -->
+                            <div class="col-lg-6 d-none d-lg-flex login-info-side">
+                                <div class="mb-5">
+                                    <a class="d-flex align-items-center text-white text-decoration-none" href="../index.html">
+                                        <i class="bi bi-cpu-fill text-info fs-1 me-3"></i>
+                                        <span class="fw-bold text-uppercase fs-3 tracking-wider">E-Component</span>
+                                    </a>
+                                </div>
+                                <div class="my-auto">
+                                    <h2 class="fw-bold mb-4">Kết Nối Đam Mê<br>Sáng Tạo Công Nghệ</h2>
+                                    <p class="text-light opacity-75 lead mb-4 small">Trở thành thành viên của gia đình E-Component để trải nghiệm dịch vụ hỗ trợ kỹ thuật đỉnh cao.</p>
+                                    <div class="d-flex flex-column gap-3">
+                                        <div class="d-flex align-items-center">
+                                            <div class="bg-navy p-2 rounded-3 me-3 d-flex align-items-center justify-content-center" style="width: 45px; height: 45px; background: rgba(6, 182, 212, 0.15);">
+                                                <i class="bi bi-gift text-info fs-4"></i>
+                                            </div>
+                                            <div>
+                                                <h6 class="mb-0 fw-bold">Coupon Giảm Giá 30%</h6>
+                                                <span class="small opacity-75 text-light">Tặng ngay mã giảm giá cho đơn hàng linh kiện đầu tiên.</span>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex align-items-center">
+                                            <div class="bg-navy p-2 rounded-3 me-3 d-flex align-items-center justify-content-center" style="width: 45px; height: 45px; background: rgba(6, 182, 212, 0.15);">
+                                                <i class="bi bi-file-earmark-code text-info fs-4"></i>
+                                            </div>
+                                            <div>
+                                                <h6 class="mb-0 fw-bold">Tài Liệu & Sơ Đồ Miễn Phí</h6>
+                                                <span class="small opacity-75 text-light">Tải về hàng trăm schematic, code mẫu Arduino, ESP32, STM32.</span>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex align-items-center">
+                                            <div class="bg-navy p-2 rounded-3 me-3 d-flex align-items-center justify-content-center" style="width: 45px; height: 45px; background: rgba(6, 182, 212, 0.15);">
+                                                <i class="bi bi-headset text-info fs-4"></i>
+                                            </div>
+                                            <div>
+                                                <h6 class="mb-0 fw-bold">Hỗ Trợ Kỹ Thuật Ưu Tiên</h6>
+                                                <span class="small opacity-75 text-light">Nhận trợ giúp trực tiếp từ các kỹ sư giàu kinh nghiệm.</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mt-5 pt-3 border-top border-secondary opacity-75">
+                                    <span class="small text-light opacity-50">&copy; 2026 E-Component. Kỹ thuật luôn đồng hành cùng bạn.</span>
+                                </div>
+                            </div>
+                            <!-- Right column: Forms side -->
+                            <div class="col-lg-6 login-form-side">
+                                <!-- Tabs navigation -->
+                                <ul class="nav nav-tabs auth-nav-tabs d-flex text-center" id="authTabs" role="tablist">
+                                    <li class="nav-item flex-fill" role="presentation">
+                                        <button class="nav-link w-100 active fs-6" id="login-tab" data-bs-toggle="tab" data-bs-target="#login-panel" type="button" role="tab" aria-controls="login-panel" aria-selected="true">ĐĂNG NHẬP</button>
+                                    </li>
+                                    <li class="nav-item flex-fill" role="presentation">
+                                        <button class="nav-link w-100 fs-6" id="register-tab" data-bs-toggle="tab" data-bs-target="#register-panel" type="button" role="tab" aria-controls="register-panel" aria-selected="false">ĐĂNG KÝ</button>
+                                    </li>
+                                </ul>
+
+                                <div class="tab-content" id="authTabsContent">
+                                    <!-- Login Panel -->
+                                    <div class="tab-pane fade show active" id="login-panel" role="tabpanel" aria-labelledby="login-tab">
+                                        <form id="loginForm" class="needs-validation" novalidate>
+                                            <div class="mb-4">
+                                                <h4 class="fw-bold text-dark-blue">Chào Mừng Trở Lại!</h4>
+                                                <p class="text-muted small">Nhập tài khoản của bạn để tiếp tục học tập và mua sắm.</p>
+                                            </div>
+                                            <div class="form-floating mb-3">
+                                                <input type="email" class="form-control" id="loginEmail" placeholder="name@example.com" required>
+                                                <label for="loginEmail"><i class="bi bi-envelope me-2 text-muted"></i>Địa chỉ Email</label>
+                                                <div class="invalid-feedback">Vui lòng nhập địa chỉ email hợp lệ.</div>
+                                            </div>
+                                            <div class="form-floating mb-3 position-relative">
+                                                <input type="password" class="form-control pe-5" id="loginPassword" placeholder="Mật khẩu" required>
+                                                <label for="loginPassword"><i class="bi bi-lock me-2 text-muted"></i>Mật khẩu</label>
+                                                <button type="button" class="btn btn-link position-absolute end-0 top-50 translate-middle-y me-2 text-secondary text-decoration-none toggle-password" data-target="loginPassword">
+                                                    <i class="bi bi-eye"></i>
+                                                </button>
+                                                <div class="invalid-feedback">Vui lòng nhập mật khẩu.</div>
+                                            </div>
+                                            <div class="d-flex justify-content-between align-items-center mb-4">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" id="rememberMe">
+                                                    <label class="form-check-label text-muted small" for="rememberMe">Nhớ mật khẩu</label>
+                                                </div>
+                                                <a href="#" class="text-primary text-decoration-none small fw-semibold" id="forgotPasswordBtn">Quên mật khẩu?</a>
+                                            </div>
+                                            <button type="submit" class="btn btn-dark-blue w-100 py-3 rounded-pill shadow fw-bold mb-4 d-flex align-items-center justify-content-center">
+                                                Đăng Nhập <i class="bi bi-arrow-right-short fs-5 ms-1"></i>
+                                            </button>
+                                            <div class="text-center mb-4">
+                                                <span class="text-muted small position-relative px-3 bg-white" style="z-index: 1;">Hoặc đăng nhập với</span>
+                                                <hr class="position-relative" style="margin-top: -10px; z-index: 0; color: var(--card-border);">
+                                            </div>
+                                            <div class="row g-2">
+                                                <div class="col-4">
+                                                    <button type="button" class="btn social-login-btn w-100 py-2.5 rounded-pill d-flex align-items-center justify-content-center">
+                                                        <i class="bi bi-google fs-5 text-danger"></i>
+                                                    </button>
+                                                </div>
+                                                <div class="col-4">
+                                                    <button type="button" class="btn social-login-btn w-100 py-2.5 rounded-pill d-flex align-items-center justify-content-center">
+                                                        <i class="bi bi-github fs-5 text-dark"></i>
+                                                    </button>
+                                                </div>
+                                                <div class="col-4">
+                                                    <button type="button" class="btn social-login-btn w-100 py-2.5 rounded-pill d-flex align-items-center justify-content-center">
+                                                        <i class="bi bi-facebook fs-5 text-primary"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+
+                                    <!-- Register Panel -->
+                                    <div class="tab-pane fade" id="register-panel" role="tabpanel" aria-labelledby="register-tab">
+                                        <form id="registerForm" class="needs-validation" novalidate>
+                                            <div class="mb-3">
+                                                <h4 class="fw-bold text-dark-blue">Tạo Tài Khoản</h4>
+                                                <p class="text-muted small">Tham gia để tải sơ đồ linh kiện và code mẫu hoàn toàn miễn phí.</p>
+                                            </div>
+                                            <div class="form-floating mb-3">
+                                                <input type="text" class="form-control" id="registerName" placeholder="Họ và tên" required minlength="2">
+                                                <label for="registerName"><i class="bi bi-person me-2 text-muted"></i>Họ và tên</label>
+                                                <div class="invalid-feedback">Vui lòng nhập họ và tên (tối thiểu 2 ký tự).</div>
+                                            </div>
+                                            <div class="form-floating mb-3">
+                                                <input type="email" class="form-control" id="registerEmail" placeholder="name@example.com" required>
+                                                <label for="registerEmail"><i class="bi bi-envelope me-2 text-muted"></i>Địa chỉ Email</label>
+                                                <div class="invalid-feedback">Vui lòng nhập địa chỉ email hợp lệ.</div>
+                                            </div>
+                                            <div class="form-floating mb-3">
+                                                <input type="tel" class="form-control" id="registerPhone" placeholder="Số điện thoại" pattern="^[0-9]{10,11}$" required>
+                                                <label for="registerPhone"><i class="bi bi-telephone me-2 text-muted"></i>Số điện thoại</label>
+                                                <div class="invalid-feedback">Vui lòng nhập số điện thoại hợp lệ (10-11 chữ số).</div>
+                                            </div>
+                                            <div class="form-floating mb-3 position-relative">
+                                                <input type="password" class="form-control pe-5" id="registerPassword" placeholder="Mật khẩu" required minlength="6">
+                                                <label for="registerPassword"><i class="bi bi-lock me-2 text-muted"></i>Mật khẩu (tối thiểu 6 ký tự)</label>
+                                                <button type="button" class="btn btn-link position-absolute end-0 top-50 translate-middle-y me-2 text-secondary text-decoration-none toggle-password" data-target="registerPassword">
+                                                    <i class="bi bi-eye"></i>
+                                                </button>
+                                                <div class="invalid-feedback">Mật khẩu phải chứa ít nhất 6 ký tự.</div>
+                                            </div>
+                                            <div class="form-floating mb-3 position-relative">
+                                                <input type="password" class="form-control pe-5" id="registerConfirmPassword" placeholder="Xác nhận mật khẩu" required>
+                                                <label for="registerConfirmPassword"><i class="bi bi-shield-check me-2 text-muted"></i>Xác nhận mật khẩu</label>
+                                                <button type="button" class="btn btn-link position-absolute end-0 top-50 translate-middle-y me-2 text-secondary text-decoration-none toggle-password" data-target="registerConfirmPassword">
+                                                    <i class="bi bi-eye"></i>
+                                                </button>
+                                                <div class="invalid-feedback" id="confirmPasswordFeedback">Vui lòng xác nhận lại mật khẩu.</div>
+                                            </div>
+                                            <div class="form-check mb-4">
+                                                <input class="form-check-input" type="checkbox" id="agreeTerms" required>
+                                                <label class="form-check-label text-muted small" for="agreeTerms">
+                                                    Tôi đồng ý với <a href="#" class="text-primary text-decoration-none fw-semibold">Điều khoản sử dụng</a> và <a href="#" class="text-primary text-decoration-none fw-semibold">Chính sách bảo mật</a>.
+                                                </label>
+                                                <div class="invalid-feedback">Bạn phải đồng ý với điều khoản dịch vụ để tiếp tục.</div>
+                                            </div>
+                                            <button type="submit" class="btn btn-dark-blue w-100 py-3 rounded-pill shadow fw-bold mb-3 d-flex align-items-center justify-content-center">
+                                                Đăng Ký Tài Khoản <i class="bi bi-person-plus-fill ms-1"></i>
+                                            </button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-5 text-white">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-4 col-md-12">
+                    <a class="d-flex align-items-center mb-3 text-white text-decoration-none" href="index.html">
+                        <i class="bi bi-cpu-fill text-info fs-3 me-2"></i>
+                        <span class="fw-bold text-uppercase fs-4">E-Component</span>
+                    </a>
+                    <p class="small opacity-75">Hệ sinh thái phân phối bán lẻ linh kiện điện tử chất lượng cao, bo mạch lập trình nhúng, cảm biến thông minh và giải pháp IoT thực tiễn cho kỹ sư và sinh viên.</p>
+                    <div class="d-flex gap-3 mt-4">
+                        <a href="https://www.facebook.com/A1pple/" class="fs-4 text-white" target="_blank"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="fs-4 text-white"><i class="bi bi-youtube" target="_blank"></i></a>
+                        <a href="https://github.com/NguyenDat1101" class="fs-4 text-white" target="_blank"><i class="bi bi-github"></i></a>
+                        <a href="https://www.linkedin.com/in/dat-nguyen-094754420/" class="fs-4 text-white" target="_blank"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-6">
+                    <h6 class="text-uppercase fw-bold text-white mb-4">Sản Phẩm</h6>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="index.html#products-section">Vi điều khiển</a></li>
+                        <li class="mb-2"><a href="index.html#products-section">Cảm biến</a></li>
+                        <li class="mb-2"><a href="index.html#products-section">Module hiển thị</a></li>
+                        <li class="mb-2"><a href="index.html#products-section">Động cơ & Driver</a></li>
+                        <li class="mb-2"><a href="index.html#products-section">Nguồn & Phụ kiện</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-4 col-6">
+                    <h6 class="text-uppercase fw-bold text-white mb-4">Hỗ Trợ</h6>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#">Tra cứu đơn hàng</a></li>
+                        <li class="mb-2"><a href="#">Hướng dẫn thanh toán</a></li>
+                        <li class="mb-2"><a href="#">Chính sách bảo hành</a></li>
+                        <li class="mb-2"><a href="#">Chính sách đổi trả</a></li>
+                        <li class="mb-2"><a href="#">Tài liệu kĩ thuật</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-4 col-12">
+                    <h6 class="text-uppercase fw-bold text-white mb-4">Liên Hệ</h6>
+                    <ul class="list-unstyled opacity-75 small">
+                        <li class="mb-3 d-flex align-items-start">
+                            <i class="bi bi-geo-alt-fill text-info me-2 mt-1"></i>
+                            <span>126 Nguyễn Thiện Thành, Phường, Hòa Thuận, Vĩnh Long, Việt Nam</span>
+                        </li>
+                        <li class="mb-3 d-flex align-items-center">
+                            <i class="bi bi-telephone-fill text-info me-2"></i>
+                            <span>+84 362 313 998</span>
+                        </li>
+                        <li class="mb-3 d-flex align-items-center">
+                            <i class="bi bi-envelope-fill text-info me-2"></i>
+                            <span>support@e-component.vn</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4 opacity-10">
+            <div class="d-flex flex-column flex-sm-row justify-content-between align-items-center small opacity-75">
+                <p class="mb-0">&copy; 2026 E-Component. Tất cả quyền được bảo lưu.</p>
+                <div class="d-flex gap-3">
+                    <a href="#">Điều khoản sử dụng</a>
+                    <a href="#">Chính sách bảo mật</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Container for Notifications -->
+    <div class="toast-container position-fixed bottom-0 end-0 p-3" style="z-index: 1060;">
+        <div id="authToast" class="toast align-items-center text-white border-0" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="d-flex">
+                <div class="toast-body d-flex align-items-center">
+                    <i id="toastIcon" class="bi fs-5 me-2"></i>
+                    <span id="toastMessage"></span>
+                </div>
+                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/app.js"></script>
+    <script src="../js/login.js"></script>
+</body>
+</html>

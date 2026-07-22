@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Component - Cửa Hàng Linh Kiện Điện Tử Uy Tín</title>
+    <script>
+        (function() {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+        })();
+    </script>
+    <link rel="icon" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/icons/cpu.svg" type="image/svg+xml">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <i class="bi bi-cpu-fill text-info fs-3 me-2 animate-cpu"></i>
+                <span class="fw-bold tracking-wide text-uppercase text-white">E-Component</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-center">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Trang Chủ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#products-section">Sản Phẩm</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about-section">Giới Thiệu</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact-section">Liên Hệ</a>
+                    </li>
+                    <li class="nav-item">
+                        <button id="theme-toggle" class="btn btn-outline-light rounded-circle p-2 ms-2" onclick="toggleTheme()">
+                            <i class="bi bi-moon"></i>
+                        </button>
+                    </li>
+                    <li class="nav-item ms-lg-3">
+                        <a href="html/cart.html" class="btn btn-accent rounded-pill px-4 shadow-sm text-dark-blue d-flex align-items-center">
+                            <i class="bi bi-cart3 me-2"></i> Giỏ Hàng
+                        </a>
+                    </li>
+                    <li class="nav-item ms-lg-2" id="nav-auth-btn">
+                        <!-- Dynamic Login/User Button populated by app.js -->
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="py-5 bg-dark text-white text-center position-relative overflow-hidden shadow-sm bg-gradient-tech">
+        <div class="position-absolute top-0 start-0 w-100 h-100 opacity-10" style="pointer-events: none;">
+            <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10 50 L100 50 L150 100 L300 100 M200 10 L250 60 L350 60" stroke="#06b6d4" stroke-width="2" fill="none"/>
+                <path d="M500 120 L550 80 L700 80 M600 20 L650 60" stroke="#06b6d4" stroke-width="2" fill="none"/>
+                <circle cx="10" cy="50" r="5" fill="#06b6d4"/>
+                <circle cx="300" cy="100" r="5" fill="#06b6d4"/>
+                <circle cx="700" cy="80" r="5" fill="#06b6d4"/>
+            </svg>
+        </div>
+        <div class="container py-5 position-relative z-1 animate-fade-in">
+            <h1 class="display-4 fw-bold text-white mb-3">Thế Giới Linh Kiện Điện Tử & IoT</h1>
+            <p class="lead text-light mb-4 mx-auto" style="max-width: 650px;">Chuyên cung cấp bo mạch phát triển, cảm biến, linh kiện bán dẫn, IC và các công cụ thực hành IoT chất lượng hàng đầu Việt Nam.</p>
+            <div class="d-flex justify-content-center gap-3">
+                <a href="#products-section" class="btn btn-accent btn-lg rounded-pill px-4 shadow">Mua Sắm Ngay</a>
+                <a href="#about-section" class="btn btn-outline-light btn-lg rounded-pill px-4">Tìm Hiểu Thêm</a>
+            </div>
+        </div>
+    </section>
+
+    <div class="container my-5">
+        <div class="row g-4 text-center">
+            <div class="col-md-4">
+                <div class="p-4 bg-white rounded-3 shadow-sm h-100 border-top border-5 border-info">
+                    <i class="bi bi-truck text-info fs-1 mb-3"></i>
+                    <h5 class="fw-bold text-dark-blue">Giao Hàng Toàn Quốc</h5>
+                    <p class="text-muted mb-0 small">Giao hàng nhanh chóng và an toàn tận nhà, đồng kiểm trước khi thanh toán.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="p-4 bg-white rounded-3 shadow-sm h-100 border-top border-5 border-primary">
+                    <i class="bi bi-shield-check text-primary fs-1 mb-3"></i>
+                    <h5 class="fw-bold text-dark-blue">100% Chính Hãng</h5>
+                    <p class="text-muted mb-0 small">Sản phẩm có nguồn gốc rõ ràng, cam kết chất lượng chuẩn kỹ thuật.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="p-4 bg-white rounded-3 shadow-sm h-100 border-top border-5 border-success">
+                    <i class="bi bi-headset text-success fs-1 mb-3"></i>
+                    <h5 class="fw-bold text-dark-blue">Hỗ Trợ Kỹ Thuật</h5>
+                    <p class="text-muted mb-0 small">Đội ngũ kỹ sư hỗ trợ hướng dẫn kết nối, viết code mẫu và sơ đồ nguyên lý.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section id="products-section" class="py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <span class="text-uppercase tracking-wider fw-bold text-primary small">Sản Phẩm Nổi Bật</span>
+                <h2 class="display-6 fw-bold text-dark-blue mt-1">Linh Kiện Đang Bán Chạy</h2>
+                <div class="mx-auto bg-info rounded" style="width: 60px; height: 4px;"></div>
+            </div>
+            
+            <div class="row justify-content-center mb-5">
+                <div class="col-md-8">
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <div class="input-group shadow-sm">
+                                <input type="text" id="searchInput" class="form-control form-control-lg border-0" placeholder="Tìm kiếm...">
+                                <button class="btn btn-dark-blue px-4" type="button"><i class="bi bi-search"></i></button>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <select id="filterCategory" class="form-select form-select-lg border-0 shadow-sm" onchange="hienThiSanPham()">
+                                <option>Tất cả</option>
+                                <option>Cảm biến</option>
+                                <option>Vi điều khiển</option>
+                                <option>Động cơ & Driver</option>
+                                <option>Hiển thị</option>
+                                <option>Máy tính nhúng</option>
+                            </select>
+                        </div>
+                        <div class="col-md-3">
+                            <select id="sortPrice" class="form-select form-select-lg border-0 shadow-sm" onchange="hienThiSanPham()">
+                                <option value="mặc định">Sắp xếp giá</option>
+                                <option value="giá thấp-cao">Giá thấp-cao</option>
+                                <option value="giá cao-thấp">Giá cao-thấp</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="product-container" class="row g-4">
+                <div class="col-12 text-center py-5">
+                    <div class="spinner-border text-primary" role="status">
+                        <span class="visually-hidden">Đang tải sản phẩm...</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about-section" class="py-5 bg-white">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6">
+                    <span class="text-uppercase tracking-wider fw-bold text-primary small">Về Chúng Tôi</span>
+                    <h2 class="display-6 fw-bold text-dark-blue mt-1 mb-4">Sứ Mệnh Đồng Hành Cùng Kỹ Sư IoT</h2>
+                    <p class="text-muted">Chúng tôi tự hào là đơn vị tiên phong cung cấp thiết bị, giải pháp IoT và học cụ STEM chất lượng hàng đầu. Với tiêu chí đặt kỹ thuật lên hàng đầu, mọi linh kiện điện tử được bán ra đều trải qua các quy trình kiểm thử nghiêm ngặt.</p>
+                    <p class="text-muted">Đội ngũ kỹ thuật luôn nỗ lực thiết kế sơ đồ đấu nối và cung cấp code mẫu trực quan giúp người học, các nhà phát triển phần cứng tối ưu hóa tối đa thời gian dự án của mình.</p>
+                    <div class="mt-4">
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="bi bi-patch-check-fill text-info fs-4 me-3"></i>
+                            <span class="fw-semibold text-secondary">Tài liệu, thư viện Github đầy đủ</span>
+                        </div>
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="bi bi-patch-check-fill text-info fs-4 me-3"></i>
+                            <span class="fw-semibold text-secondary">Hỗ trợ đổi trả trong vòng 7 ngày do lỗi sản xuất</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="p-4 rounded-4 shadow bg-gradient-tech">
+                        <div class="d-flex justify-content-between mb-4">
+                            <i class="bi bi-cpu text-info display-1"></i>
+                            <span class="badge bg-info text-dark align-self-start py-2 px-3 fw-bold rounded-pill">Kỹ Thuật Cao</span>
+                        </div>
+                        <h4 class="text-white fw-bold">Thư viện Sơ Đồ Nguyên Lý Miễn Phí</h4>
+                        <p class="text-light opacity-75 small">Mỗi sản phẩm đều tích hợp liên kết tải về schematic (Fritzing, Proteus, Altium) cùng mã lập trình cho Arduino IDE, ESP-IDF, Raspberry Pi Pico.</p>
+                        <hr class="text-light opacity-25">
+                        <div class="row text-center text-white g-2">
+                            <div class="col-6">
+                                <h3 class="fw-bold text-info mb-0">500+</h3>
+                                <span class="small opacity-75 text-xs">Mã linh kiện</span>
+                            </div>
+                            <div class="col-6">
+                                <h3 class="fw-bold text-info mb-0">24/7</h3>
+                                <span class="small opacity-75 text-xs">Hỗ trợ kỹ thuật</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact-section" class="py-5 bg-light border-top">
+        <div class="container">
+            <div class="row g-4 align-items-center">
+                <div class="col-md-6">
+                    <h3 class="fw-bold text-dark-blue">Đăng ký nhận tin tức khuyến mãi</h3>
+                    <p class="text-muted mb-0">Chúng tôi thường xuyên phát hành các coupon ưu đãi 30% linh kiện và tài liệu IoT miễn phí hàng tuần.</p>
+                </div>
+                <div class="col-md-6">
+                    <form class="d-flex gap-2">
+                        <input type="email" class="form-control rounded-pill px-4 py-3 border-0 shadow-sm" placeholder="Nhập email của bạn..." required>
+                        <button class="btn btn-dark-blue rounded-pill px-4 py-3 shadow" type="submit">Đăng Ký</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-5 text-white">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-4 col-md-12">
+                    <a class="d-flex align-items-center mb-3 text-white text-decoration-none" href="index.html">
+                        <i class="bi bi-cpu-fill text-info fs-3 me-2"></i>
+                        <span class="fw-bold text-uppercase fs-4">E-Component</span>
+                    </a>
+                    <p class="small opacity-75">Hệ sinh thái phân phối bán lẻ linh kiện điện tử chất lượng cao, bo mạch lập trình nhúng, cảm biến thông minh và giải pháp IoT thực tiễn cho kỹ sư và sinh viên.</p>
+                    <div class="d-flex gap-3 mt-4">
+                        <a href="https://www.facebook.com/A1pple/" class="fs-4 text-white" target="_blank"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="fs-4 text-white"><i class="bi bi-youtube" target="_blank"></i></a>
+                        <a href="https://github.com/NguyenDat1101" class="fs-4 text-white" target="_blank"><i class="bi bi-github"></i></a>
+                        <a href="https://www.linkedin.com/in/dat-nguyen-094754420/" class="fs-4 text-white" target="_blank"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-6">
+                    <h6 class="text-uppercase fw-bold text-white mb-4">Sản Phẩm</h6>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#">Vi điều khiển</a></li>
+                        <li class="mb-2"><a href="#">Cảm biến</a></li>
+                        <li class="mb-2"><a href="#">Module hiển thị</a></li>
+                        <li class="mb-2"><a href="#">Động cơ & Driver</a></li>
+                        <li class="mb-2"><a href="#">Nguồn & Phụ kiện</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-4 col-6">
+                    <h6 class="text-uppercase fw-bold text-white mb-4">Hỗ Trợ</h6>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#">Tra cứu đơn hàng</a></li>
+                        <li class="mb-2"><a href="#">Hướng dẫn thanh toán</a></li>
+                        <li class="mb-2"><a href="#">Chính sách bảo hành</a></li>
+                        <li class="mb-2"><a href="#">Chính sách đổi trả</a></li>
+                        <li class="mb-2"><a href="#">Tài liệu kĩ thuật</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-4 col-12">
+                    <h6 class="text-uppercase fw-bold text-white mb-4">Liên Hệ</h6>
+                    <ul class="list-unstyled opacity-75 small">
+                        <li class="mb-3 d-flex align-items-start">
+                            <i class="bi bi-geo-alt-fill text-info me-2 mt-1"></i>
+                            <span>126 Nguyễn Thiện Thành, Phường, Hòa Thuận, Vĩnh Long, Việt Nam</span>
+                        </li>
+                        <li class="mb-3 d-flex align-items-center">
+                            <i class="bi bi-telephone-fill text-info me-2"></i>
+                            <span>+84 362 313 998</span>
+                        </li>
+                        <li class="mb-3 d-flex align-items-center">
+                            <i class="bi bi-envelope-fill text-info me-2"></i>
+                            <span>support@e-component.vn</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4 opacity-10">
+            <div class="d-flex flex-column flex-sm-row justify-content-between align-items-center small opacity-75">
+                <p class="mb-0">&copy; 2026 E-Component. Tất cả quyền được bảo lưu.</p>
+                <div class="d-flex gap-3">
+                    <a href="#">Điều khoản sử dụng</a>
+                    <a href="#">Chính sách bảo mật</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

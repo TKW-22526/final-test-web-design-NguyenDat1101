@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mạch Wifi ESP8266 NodeMCU Lolin - Chi Tiết Sản Phẩm</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="../index.html">
+                <i class="bi bi-cpu-fill text-info fs-3 me-2"></i>
+                <span class="fw-bold tracking-wide text-uppercase text-white">E-Component</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-center">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">Trang Chủ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="../index.html#products-section">Sản Phẩm</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#about-section">Giới Thiệu</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#contact-section">Liên Hệ</a>
+                    </li>
+                    <li class="nav-item">
+                        <button id="theme-toggle" class="btn btn-outline-light rounded-circle p-0 ms-2" onclick="toggleTheme()" style="width: 40px; height: 40px;">
+                            <i class="bi bi-moon"></i>
+                        </button>
+                    </li>
+                    <li class="nav-item ms-lg-3">
+                        <a href="cart.html" class="btn btn-accent rounded-pill px-4 shadow-sm text-dark-blue d-flex align-items-center">
+                            <i class="bi bi-cart3 me-2"></i> Giỏ Hàng
+                        </a>
+                    </li>
+                    <li class="nav-item ms-lg-2" id="nav-auth-btn">
+                        <!-- Dynamic Login/User Button populated by app.js -->
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="bg-light py-3 border-bottom">
+        <div class="container">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb mb-0">
+                    <li class="breadcrumb-item"><a href="../index.html">Trang chủ</a></li>
+                    <li class="breadcrumb-item"><a href="../index.html#products-section">Mạch Wifi</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">ESP8266 NodeMCU</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+    <section class="py-5 bg-white">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-md-6">
+                    <div class="p-4 bg-light border rounded-3 text-center d-flex justify-content-center align-items-center" style="min-height: 400px;">
+                        <img src="../assets/images/esp8266.png" alt="Mạch ESP8266 NodeMCU" class="img-fluid" style="max-height: 350px;">
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <span class="badge badge-code mb-2 px-3 py-2 fs-6">Mã SP: WIF-ESP8266</span>
+                    <h1 class="display-6 fw-bold text-dark-blue mb-3">Mạch Wifi ESP8266 NodeMCU Lolin</h1>
+                    
+                    <div class="d-flex align-items-center mb-4">
+                        <div class="text-warning me-2">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                        </div>
+                        <span class="text-muted small">(4.9/5 - 160 đánh giá)</span>
+                    </div>
+
+                    <h2 class="text-danger fw-bold display-6 mb-4">95.000 ₫</h2>
+                    
+                    <p class="text-muted mb-4 lead">Mạch phát triển ESP8266 NodeMCU Lolin V3 dựa trên chip SoC Wi-Fi ESP8266 mạnh mẽ. Đây là giải pháp hoàn hảo, tiết kiệm chi phí cực lớn cho các hệ thống nhà thông minh và IoT.</p>
+
+                    <div class="row g-3 mb-5 align-items-center">
+                        <div class="col-auto">
+                            <label for="quantity" class="form-label fw-bold mb-0">Số lượng:</label>
+                        </div>
+                        <div class="col-md-3 col-4">
+                            <input type="number" id="quantity" class="form-control" value="1" min="1">
+                        </div>
+                        <div class="col-md-6 col-12">
+                            <button class="btn btn-dark-blue w-100 py-2.5 rounded-pill shadow d-flex justify-content-center align-items-center" onclick="themVaoGioHang(this, {ten: 'Mạch Wifi ESP8266 NodeMCU Lolin', gia: 95000, hinhAnh: 'assets/images/esp8266.png'})">
+                                <i class="bi bi-cart-plus-fill me-2 fs-5"></i> Thêm Vào Giỏ Hàng
+                            </button>
+                        </div>
+                        <div class="col-12 mt-3">
+                            <a href="../assets/docs/esp8266.pdf" class="btn btn-outline-info w-100 py-2.5 rounded-pill shadow-sm d-flex justify-content-center align-items-center" download>
+                                <i class="bi bi-download me-2 fs-5"></i> Tải Tài Liệu Kỹ Thuật
+                            </a>
+                        </div>
+                    </div>
+
+                    <h5 class="fw-bold text-dark-blue border-bottom pb-2 mb-3">Thông số kĩ thuật cơ bản</h5>
+                    <table class="table table-sm table-striped">
+                        <tbody>
+                            <tr>
+                                <th scope="row">Chíp xử lý chính</th>
+                                <td>ESP8266MOD (ESP-12F)</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Bộ chuyển đổi USB-UART</th>
+                                <td>CH340G / CP2102</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Bộ nhớ Flash</th>
+                                <td>4 Mbytes (32 Mbits)</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Chuẩn kết nối Wifi</th>
+                                <td>802.11 b/g/n (2.4 GHz)</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Điện áp hoạt động</th>
+                                <td>3.3V (Nguồn cấp 5V qua cổng MicroUSB hoặc chân Vin)</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Số chân GPIO</th>
+                                <td>10 chân GPIO, 1 chân ADC (10-bit)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="row mt-5 pt-4 border-top">
+                <div class="col-12">
+                    <h3 class="fw-bold text-dark-blue mb-4">Mô tả chi tiết & Điểm mạnh</h3>
+                    <p>ESP8266 NodeMCU Lolin là mạch phát triển IoT hoàn chỉnh, tích hợp đầy đủ nhân SoC Wifi, ăng-ten PCB hiệu suất tốt cùng mạch chuyển đổi tín hiệu USB sang TTL. Người dùng chỉ cần kết nối mạch trực tiếp với máy tính thông qua cáp MicroUSB là đã có thể lập trình dễ dàng.</p>
+                    <p>Mạch hỗ trợ hoàn hảo lõi <strong>Arduino core cho ESP8266</strong>, giúp bạn sử dụng toàn bộ tập lệnh quen thuộc của Arduino IDE để lập trình kết nối mạng, gửi nhận dữ liệu HTTP Request, MQTT, làm Web Server điều khiển thiết bị qua điện thoại thông minh cực kì nhanh gọn.</p>
+                    
+                    <h5 class="fw-bold mt-4 mb-3 text-dark-blue">Ứng dụng thực tế của ESP8266</h5>
+                    <ul>
+                        <li>Xây dựng trạm đo nhiệt độ độ ẩm đẩy dữ liệu lên Firebase, Blynk, Adafruit IO.</li>
+                        <li>Thiết kế hệ thống công tắc điện thông minh, điều khiển thiết bị gia dụng qua giọng nói (Google Assistant, Alexa).</li>
+                        <li>Chế tạo xe điều khiển từ xa truyền hình ảnh trực tiếp qua sóng Wi-Fi.</li>
+                        <li>Làm máy chấm công, hệ thống khóa cửa thông minh điều khiển từ xa.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-5 text-white">
+        <div class="container text-center text-sm-start">
+            <div class="d-flex flex-column flex-sm-row justify-content-between align-items-center">
+                <p class="mb-0 small opacity-75">&copy; 2026 E-Component. Tất cả quyền được bảo lưu.</p>
+                <div class="d-flex gap-3 mt-3 mt-sm-0 small">
+                    <a href="../index.html">Trang chủ</a>
+                    <a href="../index.html#products-section">Sản phẩm</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/app.js"></script>
+</body>
+</html>
